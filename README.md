@@ -135,3 +135,17 @@ _Modelado de Datos_
 ![Dashboard](Pictures/Análisis%20del%20Ciclo%20del%20Pedido%20y%20Tiempos%20de%20Entrega_page-0001.jpg)
 _Dashboard del Análisis del Ciclo de Pedido y Tiempos de Entrega_
 
+## Insihts Clave
+
+* Hay una directa correlación entre el retraso y la insatisfacción, vemos que en los pedidos con 1 estrella, el 36.60% sufrió retraso mientras que los pedidos de 5 estrellas, solo el 1.86% de retraso. Esto demuestra que la causa raíz principal de las malas reseñas.
+
+* El 64% de los envíos  son interestatales(entre diferentes estados) y solo el 36% son intraestatales(mismo estado). Esta alta dependencia del transporte interregional explica por qué el tiempo promedio de entrega general es de 12.50 días.
+
+* Los muebles de oficina tienen un promedio combinado de 20.59 días, donde el tiempo de preparación promedio es aproximadamente 11 días donde supera por mucho los días de preparación promedio. 
+
+* A pesar de las desviaciones regionales, el negocio mantiene una tasa de entregas a tiempo del 93.22% sobre las más de 96.4 mil órdenes.
+
+* A nivel general, el tiempo de preparación es de 3.21 días, lo que indica que el grueso de la demora (12.50 días de entrega) proviene de la fase de tránsito a cargo de las transportistas.
+
+
+
