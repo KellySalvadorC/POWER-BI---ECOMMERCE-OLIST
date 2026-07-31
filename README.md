@@ -11,9 +11,14 @@ Los datos originales, junto con una explicación de cada columna, se pueden enco
 
 La base de datos original está compuesta por un ecosistema de 9 tablas, para este proyecto se seleccionó un subconjunto de 6 tablas clave, las cuales contienen la información esencial para realizar el dashboard en Power BI.
 
-## Usando la herramienta de SQL Server
+## Procesamiento y Transformación de Datos en SQL Server
 
-Se creó vistas en SQL Server para luego importarlas en la plataforma de Power BI
+Para la fase de preparación y modelado de datos, se crearon **Vistas (Views) en SQL** con el fin de estructurar, limpiar y optimizar los conjuntos de datos antes de su análisis en Power BI:
+
+* **Filtrado Operativo e Integridad:** Se aplicó un filtro (`WHERE order_status = 'delivered'`) para acotar el análisis únicamente a pedidos completados, utilizando esta vista lógica como base para filtrar de forma consistente el detalle de items y las reseñas mediante `INNER JOIN`.
+* **Traducción y Estandarización:** Se renombraron todas las columnas al español para facilitar la navegabilidad del modelo. Además, se utilizó `COALESCE` para traducir las categorías de productos al inglés/español y asignar la etiqueta `'Uncategorized'` a los valores nulos.
+* **Casting y Calidad de Datos:** Se ajustaron los tipos de datos (como la conversión explícita del puntaje de reseñas mediante `CAST`) para garantizar cálculos numéricos correctos en el dashboard.
+* **Modelado Relacional:** Se seleccionaron únicamente las variables clave de clientes, vendedores, productos, órdenes y reseñas, eliminando redundancias y preparando la estructura lógica para el modelo estrella en Power BI.
 
 ```sql
 --VISTA TABLA ORDENES
