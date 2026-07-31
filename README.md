@@ -111,13 +111,16 @@ SELECT * FROM Tabla_Vendedores
 * **Calidad de Datos:** Evaluación de la distribución e integridad mediante el análisis de calidad de columnas (verificación de valores nulos, errores y duplicados).
 * **Transformación Complementaria:** Ajuste fino de tipos de datos y creación de **columnas condicionales** en Power Query para segmentar variables clave y facilitar la posterior agrupación de métricas.
 
+
 ![Tablas en Power Bi](Pictures/Tablas%20en%20Power%20BI.png)
+
 _Tablas importadas en POWER BI_
 
 ### 2. Modelado de Datos y DAX
 * **Tabla Calendario:** Creación de una tabla dimensional de fechas dedicada (*Date Table*) mediante DAX para permitir análisis temporales precisos y cálculos *Time Intelligence*.
 * **Modelo de Datos:** Establecimiento de relaciones (1 a Muchos) entre las tablas dimensionales (*Clientes, Productos, Vendedores, Calendario,Reseñas*) y las tablas de hechos (*Órdenes, Detalles*), construyendo un **Modelo en Estrella (Star Schema)** eficiente.
 * **Métricas DAX:** Creación de medidas explícitas para calcular indicadores clave (KPIs) como tiempos promedio de procesamiento, tiempos de tránsito, tasa de entrega a tiempo y puntaje promedio de satisfacción.
+
 
 ![Tabla Calendario](Pictures/Tabla%20Calendario.png)
 _Realizando Tabla Calendario usando lenguaje DAX_
@@ -126,4 +129,9 @@ _Realizando Tabla Calendario usando lenguaje DAX_
 _Modelado de Datos_
 
 ### 3. Diseño del Dashboard Interactivos
+* **Dashboard:** Creación de un panel dinámico con jerarquía visual intuitiva, filtros interactivos por periodo/categoría y tarjetas KPI principales.
+* **Análisis Operativo vs. Satisfacción:** Visualización focalizada en la correlación entre los días de demora/preparación y la variación en las calificaciones (*review scores*) de los clientes.
+
+![Dashboard](Pictures/Análisis%20del%20Ciclo%20del%20Pedido%20y%20Tiempos%20de%20Entrega_page-0001.jpg)
+_Dashboard del Análisis del Ciclo de Pedido y Tiempos de Entrega_
 
