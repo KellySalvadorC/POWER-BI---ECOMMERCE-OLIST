@@ -1,21 +1,5 @@
-![imagen de banner](Pictures/NEW-power_bi_logo-yellow-01.png)
-# DASHBOARD POWER BI : Análisis del Ciclo de Pedido y Tiempos de Entrega
 
-## Descripción del Proyecto
 
-### Objetivo
-_Desarrollar un dashboard interactivo en Power BI para analizar los tiempos de preparación y envío en el proceso operativo, con el fin de evaluar su impacto en las calificaciones y reseñas de los clientes _
-
-### Sobre los Datos
-Los datos originales, junto con una explicación de cada columna, se pueden encontrar [aquí](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce?resource=download&select=olist_orders_dataset.csv). 
-
-La base de datos original está compuesta por un ecosistema de 9 tablas, para este proyecto se seleccionó un subconjunto de 6 tablas clave, las cuales contienen la información esencial para realizar el dashboard en Power BI.
-
-## Usando la herramienta de SQL Server
-
-Se creó vistas en SQL Server para luego importarlas en la plataforma de Power BI
-
-```sql
 --VISTA TABLA ORDENES
 
 CREATE VIEW Tabla_Ordenes AS
@@ -75,17 +59,17 @@ LEFT JOIN product_category_name_translation t
 
 SELECT * FROM Tabla_Productos
 
---VISTA TABLA RESEÑAS
+--VISTA TABLA RESE�AS
 
-CREATE VIEW Tabla_Reseñas AS
-SELECT r.review_id AS Id_Reseña,
+CREATE VIEW Tabla_Rese�as AS
+SELECT r.review_id AS Id_Rese�a,
        r.order_id AS Id_Orden, 
-	   CAST(r.review_score AS INT) AS Puntaje_Reseña
+	   CAST(r.review_score AS INT) AS Puntaje_Rese�a
 FROM order_reviews_dataset r
 INNER JOIN Tabla_Ordenes o
 ON r.order_id = o.Id_Orden
 
-SELECT * FROM Tabla_Reseñas
+SELECT * FROM Tabla_Rese�as
 
 --VISTA TABLA VENDEDORES
 
@@ -97,8 +81,6 @@ SELECT seller_id AS Id_Vendedor,
 FROM sellers_dataset
 
 SELECT * FROM Tabla_Vendedores
-```
-
 
 
 
