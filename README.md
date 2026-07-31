@@ -11,7 +11,7 @@ Los datos originales, junto con una explicación de cada columna, se pueden enco
 
 La base de datos original está compuesta por un ecosistema de 9 tablas, para este proyecto se seleccionó un subconjunto de 6 tablas clave, las cuales contienen la información esencial para realizar el dashboard en Power BI.
 
-## Procesamiento y Transformación de Datos en SQL Server
+## 🛢️Procesamiento y Transformación de Datos en SQL Server
 
 Para la fase de preparación y modelado de datos, se crearon **Vistas (Views) en SQL** con el fin de estructurar, limpiar y optimizar los conjuntos de datos antes de su análisis en Power BI:
 
@@ -104,9 +104,26 @@ FROM sellers_dataset
 SELECT * FROM Tabla_Vendedores
 ```
 
+## 📊 Procesamiento, Modelado y Visualización en Power BI
 
+### 1. Ingesta y Profiling de Datos (Power Query)
+* **Importación:** Carga de las vistas SQL optimizadas en el entorno de Power BI.
+* **Calidad de Datos:** Evaluación de la distribución e integridad mediante el análisis de calidad de columnas (verificación de valores nulos, errores y duplicados).
+* **Transformación Complementaria:** Ajuste fino de tipos de datos y creación de **columnas condicionales** en Power Query para segmentar variables clave y facilitar la posterior agrupación de métricas.
 
+![Tablas en Power Bi](Pictures/Tablas%20en%20Power%20BI.png)
+_Tablas importadas en POWER BI_
 
+### 2. Modelado de Datos y DAX
+* **Tabla Calendario:** Creación de una tabla dimensional de fechas dedicada (*Date Table*) mediante DAX para permitir análisis temporales precisos y cálculos *Time Intelligence*.
+* **Modelo de Datos:** Establecimiento de relaciones (1 a Muchos) entre las tablas dimensionales (*Clientes, Productos, Vendedores, Calendario,Reseñas*) y las tablas de hechos (*Órdenes, Detalles*), construyendo un **Modelo en Estrella (Star Schema)** eficiente.
+* **Métricas DAX:** Creación de medidas explícitas para calcular indicadores clave (KPIs) como tiempos promedio de procesamiento, tiempos de tránsito, tasa de entrega a tiempo y puntaje promedio de satisfacción.
 
+![Tabla Calendario](Pictures/Tabla%20Calendario.png)
+_Realizando Tabla Calendario usando lenguaje DAX_
 
+![Modelado](Pictures/Modelado%20de%20Datos.png)
+_Modelado de Datos_
+
+### 3. Diseño del Dashboard Interactivos
 
